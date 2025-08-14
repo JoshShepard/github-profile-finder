@@ -1,23 +1,75 @@
-import { useState } from 'react'
+import { useState, useEffect } from 'react'
 import SearchBar from './Components/SearchBar/SearchBar';
+import UserProfile from './Components/UserProfile/UserProfile';
 import './App.css'
 
 function App() {
-  // State to hold user input
+  // State to hold live user input, submitted username, user data, loading state, and error messages
   const [username, setUsername] = useState('');
   const [submittedUsername, setSubmittedUsername] = useState('');
+  const [userData, setUserData] = useState(null);
+  const [isLoading, setIsLoading] = useState(false);
+  const [error, setError] = useState(null); 
 
+
+  // Function to handle form submission
   const handleSearchSubmit = event => {
+    // Prevent refresh on form submission
     event.preventDefault();
+    // Prevent form submission if user input is empty
     if (!username.trim()) return;
 
+    // Set verified username
     setSubmittedUsername(username);
+    console.log(`Searching for user: ${username}`);
+
+    // Clear input field after submission
     setUsername('');
   }
+
+  useEffect(() => {
+    // Prevent fetch if no username is submitted
+    if (!submittedUsername) return;
+
+    // Function to fetch user data from GitHubAPI
+    const fetchUserData = async () => {
+      setIsLoading(true); // Start loading
+      setError(null); // Clear previous errors
+
+      try {
+        // API call to fetch user data
+        const response = await fetch(`https://api.github.com/users/${submittedUsername}`);
+        // Handle non-200 responses
+        if (!response.ok) {
+          throw new Error(`User not found: ${submittedUsername}`);
+        }
+
+        // GitHub User data object
+        const data = await response.json();
+        setUserData(data); // Store fetched user data
+        console.log(data);
+
+      } catch (err) {
+        setError(err.message); // Set error message
+        setUserData(null); // Clear previous user data
+      } finally {
+        setIsLoading(false); // End loading
+      }
+    };
+
+    fetchUserData();
+  }, [submittedUsername]);
 
   return (
     <div>
       <SearchBar username={username} setUsername={setUsername} handleSearchSubmit={handleSearchSubmit} />
+      {/* Display loading message */}
+      {isLoading && <p className="loading">Looking for user...</p>}
+      {/* Display error message */}
+      {error && <p className="error">{error}</p>}
+      {/* Display user profile if userData is available */}
+      {userData && <UserProfile user={userData} />}
+
     </div>
   )
 }
