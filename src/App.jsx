@@ -1,13 +1,15 @@
 import { useState, useEffect } from 'react'
 import SearchBar from './Components/SearchBar/SearchBar';
 import UserProfile from './Components/UserProfile/UserProfile';
+import RepoList from './Components/RepoList/RepoList';
 import './App.css'
 
 function App() {
-  // State to hold live user input, submitted username, user data, loading state, and error messages
+  // State to hold live user input, submitted username, user data, repos, loading state, and error messages
   const [username, setUsername] = useState('');
   const [submittedUsername, setSubmittedUsername] = useState('');
   const [userData, setUserData] = useState(null);
+  const [repos, setRepos] = useState([]); 
   const [isLoading, setIsLoading] = useState(false);
   const [error, setError] = useState(null); 
 
@@ -43,15 +45,27 @@ function App() {
         if (!response.ok) {
           throw new Error(`User not found: ${submittedUsername}`);
         }
+        
+        // API call to fetch user repositories
+        const repoResponse = await fetch(`https://api.github.com/users/${submittedUsername}/repos`);
+        // Handle non-200 responses
+        if (!repoResponse.ok) {
+          throw new Error(`Repositories not found for user: ${submittedUsername}`);
+        }
 
         // GitHub User data object
         const data = await response.json();
         setUserData(data); // Store fetched user data
-        console.log(data);
+        // console.log(data);
 
+        // GitHub Repositories data object
+        const repoData = await repoResponse.json();
+        setRepos(repoData);
+        // console.log(repoData);
       } catch (err) {
         setError(err.message); // Set error message
         setUserData(null); // Clear previous user data
+        setRepos([]); // Clear previous repos
       } finally {
         setIsLoading(false); // End loading
       }
@@ -69,7 +83,8 @@ function App() {
       {error && <p className="error">{error}</p>}
       {/* Display user profile if userData is available */}
       {userData && <UserProfile user={userData} />}
-
+      {/* Display repo list if repos are available */}
+      {repos.length > 0 && <RepoList repos={repos} />}
     </div>
   )
 }
