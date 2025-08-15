@@ -3,5 +3,54 @@
     color: #0366D6;
     font-weight: bold;
     font-size: 1.2rem;
-    margin-top: 1rem;
+    margin-top: 6rem;
+}
+
+.repoHeader {
+    margin: 4rem 0 2rem 4rem;
+}
+
+.repolistContainer {
+    display: grid;
+    grid-template-columns:  repeat(4, 1fr);
+    gap: 1rem;
+    margin: 0 4rem;
+    padding-bottom: 4rem;
+}
+
+.repoCard {
+    min-height: 15rem;
+    background-color: #2f2f2f;
+    padding: 1.2rem;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.4);
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+    display: flex;
+    flex-direction: column;
+}
+
+.repoCard:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.5);
+}
+
+.repoLink {
+  font-size: 1.1rem;
+  font-weight: bold;
+  color: #58a6ff; /* GitHub link blue */
+  text-decoration: none;
+  margin-bottom: 0.5rem;
+}
+
+.repoLink:hover {
+  text-decoration: underline;
+}
+
+.repoDescription {
+  font-size: 0.9rem;
+  color: #9b9b9b;
+  margin-bottom: 0.8rem;
+  line-height: 1.4;
+  word-wrap: break-word;
+  overflow-wrap: break-word;
 }

@@ -3,8 +3,8 @@
     color: #0366D6;
     font-weight: bold;
     font-size: 1.2rem;
-    margin-top: 1rem;
-    animation: pulse 1.5s infinite;
+    margin-top: 5rem;
+    animation: pulse 2.5s infinite;
 }
 
 /* Pulse animation for loading */

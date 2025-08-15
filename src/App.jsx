@@ -1,8 +1,9 @@
 import { useState, useEffect } from 'react'
 import SearchBar from './Components/SearchBar/SearchBar';
+import HeroPage from './Components/HeroPage/HeroPage';
 import UserProfile from './Components/UserProfile/UserProfile';
 import RepoList from './Components/RepoList/RepoList';
-import './App.css'
+import styles from './App.module.css'
 
 function App() {
   // State to hold live user input, submitted username, user data, repos, loading state, and error messages
@@ -56,12 +57,12 @@ function App() {
         // GitHub User data object
         const data = await response.json();
         setUserData(data); // Store fetched user data
-        // console.log(data);
+        console.log(data);
 
         // GitHub Repositories data object
         const repoData = await repoResponse.json();
         setRepos(repoData);
-        // console.log(repoData);
+        console.log(repoData);
       } catch (err) {
         setError(err.message); // Set error message
         setUserData(null); // Clear previous user data
@@ -75,10 +76,10 @@ function App() {
   }, [submittedUsername]);
 
   return (
-    <div>
+    <div className={styles.appContainer}>
       <SearchBar username={username} setUsername={setUsername} handleSearchSubmit={handleSearchSubmit} />
       {/* Display loading message */}
-      {isLoading && <p className="loading">Looking for user...</p>}
+      {isLoading && <p className={styles.loading}>Looking for user...</p>}
       {/* Display error message */}
       {error && <p className="error">{error}</p>}
       {/* Display user profile if userData is available */}
