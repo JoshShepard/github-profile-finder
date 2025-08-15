@@ -29,3 +29,13 @@
   font-size: 2rem;
   margin: 0 auto;
 }
+
+@media (max-width: 768px) {
+  .slogan {
+    font-size: 4.5rem;
+    text-align: center;
+  }
+  .description {
+    font-size: 1.5rem;
+  }
+}

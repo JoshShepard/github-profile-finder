@@ -11,6 +11,15 @@
     gap: 1rem;
 }
 
+@media (max-width: 600px) {
+  .form {
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 0.5rem;
+  }
+}
+
 .input {
     font-size: 1rem;
     color: #fff;
@@ -18,7 +27,7 @@
     border: 1px solid #d1d5da;
     border-radius: 20px;
     transition: border-color 0.3s ease, box-shadow 0.3s ease;
-    width:  25rem;
+    width:  20rem;
 }
 
 .input:focus {

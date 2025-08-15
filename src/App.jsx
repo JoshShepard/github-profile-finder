@@ -83,7 +83,7 @@ function App() {
       {/* Display loading message */}
       {isLoading && <p className={styles.loading}>Looking for user...</p>}
       {/* Display error message */}
-      {error && <p className="error">{error}</p>}
+      {error && <p className={styles.error} role="alert">{error}</p>}
       {/* Display user profile if userData is available */}
       {userData && <UserProfile user={userData} />}
       {/* Display repo list if repos are available */}
