@@ -78,6 +78,8 @@ function App() {
   return (
     <div className={styles.appContainer}>
       <SearchBar username={username} setUsername={setUsername} handleSearchSubmit={handleSearchSubmit} />
+      {/* If there isn't userData show hero page */}
+      {!userData && <HeroPage />}
       {/* Display loading message */}
       {isLoading && <p className={styles.loading}>Looking for user...</p>}
       {/* Display error message */}
