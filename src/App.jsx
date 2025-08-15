@@ -57,12 +57,12 @@ function App() {
         // GitHub User data object
         const data = await response.json();
         setUserData(data); // Store fetched user data
-        console.log(data);
+        // console.log(data);
 
         // GitHub Repositories data object
         const repoData = await repoResponse.json();
         setRepos(repoData);
-        console.log(repoData);
+        // console.log(repoData);
       } catch (err) {
         setError(err.message); // Set error message
         setUserData(null); // Clear previous user data
@@ -79,7 +79,7 @@ function App() {
     <div className={styles.appContainer}>
       <SearchBar username={username} setUsername={setUsername} handleSearchSubmit={handleSearchSubmit} />
       {/* If there isn't userData show hero page */}
-      {!userData && <HeroPage />}
+      {!submittedUsername && <HeroPage />}
       {/* Display loading message */}
       {isLoading && <p className={styles.loading}>Looking for user...</p>}
       {/* Display error message */}
