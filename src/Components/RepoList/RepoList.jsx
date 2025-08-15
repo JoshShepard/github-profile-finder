@@ -1,6 +1,12 @@
 import styles from './RepoList.module.css';
 
 function RepoList({ repos }) {
+    if (repos.length === 0) {
+        return (
+            <p className={styles.emptyRepo}>No public repositories found...</p>
+        );
+    }
+
     return (
         <div className={styles.repolistContainer}>
             {repos.map(repo => (

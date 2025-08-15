@@ -1,0 +1,43 @@
+.profileContainer {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 7rem;
+}
+
+.avatar {
+    border-radius: 50%;
+}
+
+.profileDetails {
+    padding-top: 2rem;
+}
+
+.header {
+    color: #fff;
+    font-size: 5rem;
+    margin-bottom: 1rem;
+}
+
+.followers {
+    font-size: 1.5rem;
+    color: #58a6ff;
+    margin-bottom: .5rem;
+}
+
+.bio, .profileLocation {
+    color: #d1d5db;
+    font-size: 1.2rem;
+}
+
+.profileLocation {
+    margin-bottom: .5rem;
+}
+
+
+.profileLink {
+    color: #6c757d;
+    text-decoration: none;
+    border-bottom: 1px solid #6c757d;
+    padding-bottom: .3rem;
+}
