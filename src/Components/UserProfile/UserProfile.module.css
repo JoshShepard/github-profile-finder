@@ -63,6 +63,7 @@
 @media (max-width: 1173px) {
   .profileContainer {
     flex-direction: column;
+    justify-content: content;
     text-align: center;
     gap: 1.5rem;
   }

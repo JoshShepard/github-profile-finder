@@ -11,15 +11,6 @@
     gap: 1rem;
 }
 
-@media (max-width: 600px) {
-  .form {
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    gap: 0.5rem;
-  }
-}
-
 .input {
     font-size: 1rem;
     color: #fff;
@@ -49,4 +40,30 @@
 
 .button:hover {
     background-color: #0356c6;
+}
+
+/*  MEDIA QUERIES */
+ @media (max-width: 768px) {
+    .input {
+        width: 18rem;
+    }
+ }
+ 
+ @media (max-width: 600px) {
+    .form {
+        flex-direction: column;
+        align-items: center;
+        gap: 0.5rem;
+    }
+
+    .input {
+        width: 100%;
+        max-width: 20rem;
+    }
+ }
+
+ @media (max-width: 375px) {
+  .input, .button {
+    max-width: 100%;
+  }
 }
