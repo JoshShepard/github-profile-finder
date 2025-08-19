@@ -72,6 +72,7 @@ function App() {
       }
     };
 
+    // API call to fetch user data and repositories
     fetchUserData();
   }, [submittedUsername]);
 
