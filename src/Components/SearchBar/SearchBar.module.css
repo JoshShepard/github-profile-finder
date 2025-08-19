@@ -61,9 +61,3 @@
         max-width: 20rem;
     }
  }
-
- @media (max-width: 375px) {
-  .input, .button {
-    max-width: 100%;
-  }
-}
