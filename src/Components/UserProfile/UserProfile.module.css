@@ -59,6 +59,7 @@
     border-color: #58a6ff;
 }
 
+/* MEDIA QUERIES */
 @media (max-width: 768px) {
   .header {
     font-size: 1.5rem;
@@ -70,6 +71,10 @@
 }
 
 @media (max-width: 480px) {
+  .profileContainer {
+    width: 90%;
+    padding: 1.5rem;
+  }
   .avatar {
     width: 8.5rem;
     height: auto;
@@ -95,48 +100,3 @@
     height: auto;
   }
 }
-
-/* @media (max-width: 768px) {
-  .avatar {
-    width: 100px;
-    height: 100px;
-  }
-
-  .header {
-    font-size: 3.5rem;
-  }
-}
-
-@media (max-width: 1173px) {
-  .profileContainer {
-    flex-direction: column;
-    justify-content: content;
-    text-align: center;
-    gap: 1.5rem;
-  }
-
-  .avatar {
-    width: 250px;
-    height: auto;
-  }
-}
-
-
-@media (max-width: 530px) {
-    .profileContainer {
-        gap: 1rem;
-    }
-
-  .avatar {
-    width: 100px;
-    height: 100px;
-  }
-
-  .header {
-    font-size: 1.5rem;
-  }
-
-  .bio, .profileLocation {
-    font-size: 1rem;
-  }
-} */

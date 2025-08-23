@@ -1,3 +1,9 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
 .emptyRepo {
     text-align: center;
     color: #0366D6;
@@ -12,7 +18,7 @@
 
 .repolistContainer {
     display: grid;
-    grid-template-columns:  repeat(4, 1fr);
+    grid-template-columns:  repeat(auto-fit, minmax(22.5rem, 1fr));
     gap: 1rem;
     margin: 0 4rem;
     padding-bottom: 4rem;
@@ -53,4 +59,23 @@
   line-height: 1.4;
   word-wrap: break-word;
   overflow-wrap: break-word;
+}
+
+@media (max-width: 768px) {
+ .repoHeader {
+  margin: 2rem 0.5rem;
+  text-align: center;
+  font-size: 1.25rem;
+ }
+
+ .repolistContainer {
+  margin: 0 2rem;
+ }
+}
+
+@media (max-width: 480px) {
+ .repolistContainer {
+  grid-template-columns: repeat(auto-fit, minmax(15rem, 1fr));
+  margin: 0 1rem;
+ }
 }
