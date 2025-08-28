@@ -24,8 +24,8 @@ Built with **React, JavaScript (ES6+), and the GitHub REST API**, this project d
 ---
 
 ## 📸 Demo
-![Demo Screenshot](src/assests/GitHub-Homepage.png)
-![Demo Screenshot](./src/assests/GitHub-UserProfilepage.png)
+![Demo Screenshot](src/assets/GitHub-Homepage.png)
+![Demo Screenshot](./src/assets/GitHub-UserProfilepage.png)
 
 ---
 
