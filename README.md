@@ -1,12 +1,43 @@
-# React + Vite
+# 🔎 GitHub Profile Finder
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
 
-Currently, two official plugins are available:
+A responsive React application that allows users to search for GitHub profiles and instantly explore their repositories.  
+Built with **React, JavaScript (ES6+), and the GitHub REST API**, this project demonstrates API integration, state management, and modern front-end development practices.
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+---
 
-## Expanding the ESLint configuration
+## 🚀 Features
+- Search GitHub users by username  
+- Display profile details: avatar, name, bio, location, followers/following  
+- List all public repositories with names, links, and descriptions  
+- Loading and error handling states for a smooth user experience  
+- Responsive design for mobile, tablet, and desktop
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+---
+
+## 🛠️ Technologies Used
+- **React** (with Hooks: `useState`, `useEffect`)  
+- **JavaScript (ES6+)**  
+- **CSS Modules** for component-scoped styling  
+- **GitHub REST API**
+
+---
+
+## 📸 Demo
+![Demo Screenshot](./src/assests/GitHub-Homepage.png)
+![Demo Screenshot](./src/assests/GitHub-UserProfilepage.png)
+
+---
+
+## ⚡ How It Works
+1. User enters a GitHub username in the search bar.  
+2. App fetches user details and repositories via the GitHub REST API.  
+3. Results are displayed dynamically with conditional rendering:  
+   - Hero screen (default state)  
+   - Loading state  
+   - Error message (e.g., invalid username)  
+   - Profile + repositories
+
+
+
+  
